@@ -2,8 +2,9 @@ package utils
 
 import (
 	"fmt"
-	"gopkg.in/ini.v1"
 	"time"
+
+	"gopkg.in/ini.v1"
 )
 
 var (
@@ -41,7 +42,7 @@ func init() {
 
 func LoadServer(file *ini.File) {
 	AppMode = file.Section("server").Key("AppMode").MustString("debug")
-	HttpPort = file.Section("server").Key("HttpPort").MustString("3000")
+	HttpPort = file.Section("server").Key("HttpPort").MustString("8000")
 	JwtKey = file.Section("server").Key("JwtKey").MustString("123new456")
 
 }
